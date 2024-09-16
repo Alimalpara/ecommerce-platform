@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - My E-Commerce Store</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <h1>My E-Commerce Store</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="cart.html">Cart</a>
+                <a href="dashboard.html">Dashboard</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <input type="text" id="searchBar" placeholder="Search products...">
+            <div id="cartPreview">Cart (0)</div>
+        </div>
+    </header>
+
+    <main>
+        <div class="product-detail" id="productDetail">
+            <!-- Product details will be dynamically loaded here -->
+        </div>
+
+        <section id="reviews">
+            <h2>Product Reviews</h2>
+            <div id="reviewsList">
+                <!-- Reviews will be dynamically loaded here -->
+            </div>
+            <div id="addReviewSection">
+                <h3>Add a Review</h3>
+                <textarea id="newReview" rows="4" placeholder="Write your review here..."></textarea>
+                <button id="submitReview">Submit Review</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My E-Commerce Store</p>
+    </footer>
+
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

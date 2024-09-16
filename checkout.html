@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - My E-Commerce Store</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <h1>My E-Commerce Store</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="cart.html">Cart</a>
+                <a href="dashboard.html">Dashboard</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <input type="text" id="searchBar" placeholder="Search products...">
+            <div id="cartPreview">Cart (0)</div>
+        </div>
+    </header>
+
+    <main>
+        <h2>Checkout</h2>
+        <div class="checkout-container">
+            <form id="checkoutForm">
+                <div class="form-section">
+                    <h3>Shipping Information</h3>
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" required>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" required>
+                    <label for="city">City:</label>
+                    <input type="text" id="city" required>
+                    <label for="postal">Postal Code:</label>
+                    <input type="text" id="postal" required>
+                </div>
+                <div class="form-section">
+                    <h3>Payment Details</h3>
+                    <label for="cardNumber">Credit Card Number:</label>
+                    <input type="text" id="cardNumber" required>
+                    <label for="expiry">Expiry Date:</label>
+                    <input type="text" id="expiry" placeholder="MM/YY" required>
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" required>
+                </div>
+                <div class="form-section">
+                    <h3>Order Summary</h3>
+                    <p>Total: <span id="orderTotal">$0.00</span></p>
+                </div>
+                <button type="submit" class="complete-purchase-button">Complete Purchase</button>
+            </form>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+                <div class="step active">Cart</div>
+                <div class="step">Shipping</div>
+                <div class="step">Payment</div>
+                <div class="step">Confirmation</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My E-Commerce Store</p>
+    </footer>
+
+    <script src="js/checkout.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Platform - Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <h1>My E-Commerce Store</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="cart.html">Cart</a>
+                <a href="dashboard.html">Dashboard</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <input type="text" id="searchBar" placeholder="Search products...">
+            <div id="cartPreview">Cart (0)</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Carousel -->
+        <section id="hero">
+            <div class="carousel">
+                <img src="images/slide1.jpg" alt="Slide 1" class="carousel-slide active">
+                <img src="images/slide2.jpg" alt="Slide 2" class="carousel-slide">
+                <img src="images/slide3.jpg" alt="Slide 3" class="carousel-slide">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- Personalized Recommendations -->
+        <section id="recommendations">
+            <h2>Recommended for You</h2>
+            <div class="product-grid" id="recommendedProducts">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My E-Commerce Store</p>
+    </footer>
+
+    <script src="js/carousel.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

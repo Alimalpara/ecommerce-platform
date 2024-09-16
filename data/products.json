@@ -1,0 +1,39 @@
+[
+    {
+        "id": 1,
+        "name": "Product 1",
+        "price": 29.99,
+        "description": "This is a detailed description for Product 1. It highlights the features and benefits of the product.",
+        "images": [
+            "images/product1.jpg",
+            "images/product1-2.jpg"
+        ],
+        "reviews": [
+            "Great product!",
+            "Loved it."
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Product 2",
+        "price": 49.99,
+        "description": "This is a detailed description for Product 2. It highlights the features and benefits of the product.",
+        "images": [
+            "images/product2.jpg"
+        ],
+        "reviews": [
+            "Not bad.",
+            "Could be better."
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Product 3",
+        "price": 19.99,
+        "description": "This is a detailed description for Product 3. It highlights the features and benefits of the product.",
+        "images": [
+            "images/product3.jpg"
+        ],
+        "reviews": []
+    }
+]
