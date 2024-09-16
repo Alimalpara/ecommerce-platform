@@ -3,15 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>Products - 247 E-Commerce Store</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details - My E-Commerce Store</title>
+    <!-- Link to CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     <header>
         <div class="header-left">
-            <h1>My E-Commerce Store</h1>
+            <h1>247 E-Commerce Store</h1>
             <nav>
                 <a href="index.html">Home</a>
                 <a href="products.html">Products</a>
@@ -26,29 +27,41 @@
     </header>
 
     <main>
-        <div class="product-detail" id="productDetail">
-            <!-- Product details will be dynamically loaded here -->
+        <!-- Container for All Products -->
+        <div id="allProductsSection">
+            <h2>All Products</h2>
+            <div class="product-grid" id="allProducts">
+                <!-- All products will be dynamically loaded here -->
+            </div>
         </div>
 
-        <section id="reviews">
-            <h2>Product Reviews</h2>
-            <div id="reviewsList">
-                <!-- Reviews will be dynamically loaded here -->
+        <!-- Container for Product Details -->
+        <div id="productDetailSection" style="display: none;">
+            <div class="product-detail" id="productDetail">
+                <!-- Product details will be dynamically loaded here -->
             </div>
-            <div id="addReviewSection">
-                <h3>Add a Review</h3>
-                <textarea id="newReview" rows="4" placeholder="Write your review here..."></textarea>
-                <button id="submitReview">Submit Review</button>
-            </div>
-        </section>
+
+            <section id="reviews">
+                <h2>Product Reviews</h2>
+                <div id="reviewsList">
+                    <!-- Reviews will be dynamically loaded here -->
+                </div>
+                <div id="addReviewSection">
+                    <h3>Add a Review</h3>
+                    <textarea id="newReview" rows="4" placeholder="Write your review here..."></textarea>
+                    <button id="submitReview">Submit Review</button>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 My E-Commerce Store</p>
+        <p>&copy; 2024 247 E-Commerce Store</p>
     </footer>
 
-    <script src="js/cart.js"></script>
+    <!-- JavaScript files -->
     <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>

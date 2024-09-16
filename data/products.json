@@ -3,6 +3,7 @@
         "id": 1,
         "name": "Product 1",
         "price": 29.99,
+        "color": "#FF5733",
         "description": "This is a detailed description for Product 1. It highlights the features and benefits of the product.",
         "images": [
             "images/product1.jpg",
@@ -17,6 +18,7 @@
         "id": 2,
         "name": "Product 2",
         "price": 49.99,
+        "color": "#33C1FF",
         "description": "This is a detailed description for Product 2. It highlights the features and benefits of the product.",
         "images": [
             "images/product2.jpg"
@@ -30,6 +32,7 @@
         "id": 3,
         "name": "Product 3",
         "price": 19.99,
+        "color": "#75FF33",
         "description": "This is a detailed description for Product 3. It highlights the features and benefits of the product.",
         "images": [
             "images/product3.jpg"

@@ -9,13 +9,7 @@ function loadOrderTotal() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   let total = 0;
 
-  // For demonstration, using a static list. Replace with fetch from products.json
-  const products = [
-    { id: 1, price: 29.99 },
-    { id: 2, price: 49.99 },
-    { id: 3, price: 19.99 },
-    // Add more products as needed
-  ];
+  const products = getProducts(); // Use the same function from main.js
 
   cart.forEach((item) => {
     const product = products.find((p) => p.id === item.productId);

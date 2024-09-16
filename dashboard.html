@@ -3,15 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>User Dashboard - 247 E-Commerce Store</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard - My E-Commerce Store</title>
+    <!-- Link to CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     <header>
         <div class="header-left">
-            <h1>My E-Commerce Store</h1>
+            <h1>247 E-Commerce Store</h1>
             <nav>
                 <a href="index.html">Home</a>
                 <a href="products.html">Products</a>
@@ -42,7 +43,7 @@
             </div>
             <div class="dashboard-section">
                 <h3 onclick="toggleSection('accountSection')">Account Management</h3>
-                <form id="accountForm" class="collapsible-section" style="display: none;">
+                <form id="accountForm" class="collapsible-section">
                     <label for="username">Username:</label>
                     <input type="text" id="username" required>
                     <label for="email">Email:</label>
@@ -52,7 +53,7 @@
             </div>
             <div class="dashboard-section">
                 <h3 onclick="toggleSection('settingsSection')">Settings</h3>
-                <div id="settingsSection" class="collapsible-section" style="display: none;">
+                <div id="settingsSection" class="collapsible-section">
                     <label for="currency">Currency:</label>
                     <select id="currency">
                         <option value="USD">USD</option>
@@ -76,9 +77,10 @@
         <p>&copy; 2024 My E-Commerce Store</p>
     </footer>
 
+    <!-- JavaScript files -->
     <script src="js/dashboard.js"></script>
-    <script src="js/cart.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>

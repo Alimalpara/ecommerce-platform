@@ -23,7 +23,7 @@ function loadUserData() {
   const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
   const wishlistList = document.getElementById("wishlistSection");
   wishlistList.innerHTML = wishlist.length
-    ? wishlist.map((item) => `<li>${item.name} - $${item.price}</li>`).join("")
+    ? wishlist.map((item) => `<li>${item.name} - ${item.price}</li>`).join("")
     : "<li>Your wishlist is empty.</li>";
 
   // Load account info
@@ -47,12 +47,8 @@ function setupAccountForm() {
   const form = document.getElementById("accountForm");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const username = document.getElementById("username").value.trim();
-    const email = document.getElementById("email").value.trim();
-    if (username === "" || email === "") {
-      alert("Please fill in all fields.");
-      return;
-    }
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
     localStorage.setItem("username", username);
     localStorage.setItem("email", email);
     alert("Account information saved.");
@@ -69,7 +65,6 @@ function setupSettings() {
     localStorage.setItem("currency", currency.value);
     alert("Currency preference saved.");
     displayPrices();
-    updateCartPageTotal();
   });
 
   language.addEventListener("change", () => {
@@ -91,40 +86,5 @@ function toggleSection(id) {
     section.style.display = "block";
   } else {
     section.style.display = "none";
-  }
-}
-
-// Display Prices Based on Selected Currency
-function displayPrices() {
-  const currency = localStorage.getItem("currency") || "USD";
-  const symbol = getCurrencySymbol(currency);
-  const priceElements = document.querySelectorAll(".price");
-
-  priceElements.forEach((el) => {
-    const price = parseFloat(el.getAttribute("data-price"));
-    el.innerText = `${symbol}${price.toFixed(2)}`;
-  });
-}
-
-// Get Currency Symbol
-function getCurrencySymbol(currency) {
-  const symbols = { USD: "$", EUR: "€" };
-  return symbols[currency] || "$";
-}
-
-// Update Cart Page Total if on Cart Page
-function updateCartPageTotal() {
-  if (window.location.pathname.endsWith("cart.html")) {
-    loadCartItems();
-  }
-}
-
-// Initialize Cart Preview on Page Load
-function updateCartPreview() {
-  const cartPreview = document.getElementById("cartPreview");
-  if (cartPreview) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
-    cartPreview.innerText = `Cart (${totalItems})`;
   }
 }

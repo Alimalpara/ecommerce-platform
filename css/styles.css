@@ -1,15 +1,6 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-
-/* Reset some default styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 /* General Styles */
 body {
+    margin: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #f5f5f5;
     opacity: 0;
@@ -28,7 +19,7 @@ header {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .header-left {
@@ -90,10 +81,8 @@ header nav a:hover {
 main {
     padding: 20px;
     min-height: calc(100vh - 120px);
-    /* Adjust based on header and footer height */
 }
 
-/* Footer */
 footer {
     background-color: #6200EE;
     color: white;
@@ -102,7 +91,7 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
 }
 
 /* Carousel Styles */
@@ -112,21 +101,35 @@ footer {
     margin: auto;
     overflow: hidden;
     height: 300px;
-    /* Fixed height for slides */
+    /* This ensures the carousel maintains a fixed height */
     border-radius: 10px;
 }
 
 .carousel-slide {
     width: 100%;
-    height: 300px;
+    height: 100%;
     display: none;
-    object-fit: cover;
+    color: white;
+    font-size: 2em;
+    align-items: center;
+    justify-content: center;
     border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
     transition: opacity 0.5s ease;
 }
 
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Ensures the image keeps its aspect ratio */
+    border-radius: 10px;
+}
+
 .carousel-slide.active {
-    display: block;
+    display: flex;
     opacity: 1;
 }
 
@@ -171,16 +174,17 @@ footer {
 .product-card {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     overflow: hidden;
     transition: transform 0.2s, box-shadow 0.2s;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .product-card a {
@@ -188,15 +192,12 @@ footer {
     color: inherit;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    flex-grow: 1;
 }
 
 .product-placeholder {
     width: 100%;
     height: 150px;
     background-color: #ccc;
-    margin-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -207,7 +208,6 @@ footer {
 .product-card h3 {
     margin: 10px;
     font-size: 1.2em;
-    flex-grow: 1;
 }
 
 .product-card .price {
@@ -216,7 +216,7 @@ footer {
     color: #6200EE;
 }
 
-.add-to-cart-btn {
+.product-card .add-to-cart-btn {
     margin: 0 10px 10px 10px;
     padding: 10px;
     background-color: #03DAC5;
@@ -224,12 +224,36 @@ footer {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: 500;
     transition: background-color 0.3s ease;
-    font-size: 1em;
 }
 
-.add-to-cart-btn:hover {
+.product-card .add-to-cart-btn:hover {
     background-color: #018786;
+}
+.product-image {
+    width: 100%;
+    height: 200px;
+    /* Ensures the image maintains its aspect ratio */
+    max-height: 300px;
+    /* Limits the maximum height to prevent oversized images */
+    object-fit: cover;
+    /* Ensures the image doesn't stretch */
+    border-radius: 10px;
+    /* Optional: Adds border-radius to match the card style */
+}
+.product-images img {
+    width: 100%;
+    max-width: 600px;
+    /* Set a max width to avoid too large images */
+    height: 400px;
+        /* Ensures the image maintains its aspect ratio */
+        max-height: 600px;
+        /* Limits the maximum height to prevent oversized images */
+        object-fit: cover;
+        /* Ensures the image doesn't stretch */
+        border-radius: 10px;
+        /* Optional: Adds border-radius to match the card style */
 }
 
 /* Product Detail */
@@ -240,20 +264,26 @@ footer {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     margin-top: 20px;
 }
 
-.product-detail .product-images,
-.product-detail .product-info {
+.product-detail .product-images, .product-detail .product-info {
     flex: 1;
     min-width: 300px;
 }
 
-.product-detail .product-images img {
+.product-detail .product-images .image-placeholder {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
+    height: 300px;
+    background-color: #ccc;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-size: 1em;
+    border-radius: 5px;
 }
 
 .product-detail .product-info h2 {
@@ -277,7 +307,6 @@ footer {
     padding: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    margin-right: 10px;
 }
 
 .product-detail .product-info button {
@@ -300,7 +329,7 @@ footer {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     margin-top: 20px;
 }
 
@@ -311,7 +340,6 @@ footer {
 
 #reviewsList li {
     margin-bottom: 10px;
-    color: #555;
 }
 
 #addReviewSection {
@@ -324,7 +352,6 @@ footer {
     border-radius: 5px;
     border: 1px solid #ccc;
     resize: vertical;
-    font-size: 1em;
 }
 
 #addReviewSection button {
@@ -336,7 +363,6 @@ footer {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-size: 1em;
 }
 
 #addReviewSection button:hover {
@@ -347,7 +373,7 @@ footer {
 .cart-item {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     padding: 15px;
     margin-bottom: 15px;
     display: flex;
@@ -367,26 +393,23 @@ footer {
     border-radius: 5px;
 }
 
-.cart-item-details {
-    flex-grow: 1;
-}
-
-.cart-item-details h3 {
+.cart-item h3 {
     margin: 0;
     color: #6200EE;
 }
 
-.cart-item-details p {
+.cart-item p {
     margin: 5px 0;
     color: #555;
 }
 
-.cart-item-details .price {
+.cart-item .price {
     font-weight: bold;
     color: #03DAC5;
 }
 
 .cart-item button {
+    margin-left: auto;
     background-color: #f44336;
     color: white;
     border: none;
@@ -401,8 +424,8 @@ footer {
 }
 
 .checkout-button {
-    width: 100%;
-    padding: 15px;
+    width: auto;
+    padding: 12px 20px;
     background-color: #6200EE;
     color: white;
     border: none;
@@ -418,13 +441,10 @@ footer {
 
 /* Checkout Form */
 .checkout-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
     background-color: white;
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     margin-top: 20px;
 }
 
@@ -449,27 +469,25 @@ form {
 label {
     font-weight: 500;
     color: #333;
+    margin-top: 10px;
 }
 
-input,
-select,
-textarea {
+input, select, textarea {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 1em;
+    width: 100%;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
+input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: #6200EE;
     box-shadow: 0 0 5px rgba(98, 0, 238, 0.5);
 }
 
 .complete-purchase-button {
-    padding: 15px;
+    padding: 12px 20px;
     background-color: #03DAC5;
     color: white;
     border: none;
@@ -499,8 +517,7 @@ textarea:focus {
     height: 4px;
     background-color: #4caf50;
     transform: translateY(-50%);
-    width: 25%;
-    /* Update dynamically */
+    width: 25%; /* Update dynamically */
     transition: width 0.3s ease;
 }
 
@@ -526,13 +543,10 @@ textarea:focus {
 
 /* Dashboard Styles */
 .dashboard {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
     background-color: white;
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     margin-top: 20px;
 }
 
@@ -541,6 +555,7 @@ textarea:focus {
     padding: 15px;
     border-radius: 10px;
     background-color: #FAFAFA;
+    margin-bottom: 20px;
 }
 
 .dashboard-section h3 {
@@ -580,8 +595,7 @@ textarea:focus {
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     }
 
-    .carousel .prev,
-    .carousel .next {
+    .carousel .prev, .carousel .next {
         font-size: 16px;
         padding: 10px;
     }
@@ -608,13 +622,22 @@ textarea:focus {
         margin-left: 0;
         margin-top: 10px;
     }
+
+    .header-right {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #searchBar {
+        width: 100%;
+    }
 }
 
 /* Mobile Phones */
 @media (max-width: 480px) {
     header nav {
-        display: none;
-        /* Implement a hamburger menu for better UX */
+        display: none; /* Implement a hamburger menu for better UX */
     }
 
     header {
@@ -625,14 +648,13 @@ textarea:focus {
         grid-template-columns: 1fr;
     }
 
-    .carousel .prev,
-    .carousel .next {
+    .carousel .prev, .carousel .next {
         font-size: 14px;
         padding: 8px;
     }
 
     #searchBar {
-        width: 150px;
+        width: 100%;
     }
 
     .checkout-container {
@@ -641,5 +663,17 @@ textarea:focus {
 
     .complete-purchase-button {
         font-size: 1em;
+        width: 100%;
+    }
+
+    .header-right {
+        margin-top: 10px;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .product-detail .product-images, .product-detail .product-info {
+        min-width: 100%;
     }
 }
